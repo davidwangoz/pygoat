@@ -25,6 +25,7 @@ jobs:
        with:
           name: bandit findings
           path: bandit-findings.json
+          
    image_scan:
       name: Build image and Scan
       runs-on: ubuntu-latest
@@ -42,7 +43,8 @@ jobs:
         
       - name: Docker scout
         run: | 
-          curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
+          curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh -o install_scout.sh
+          sh install_scout.sh
           docker scout quickview
           docker scout cves
 
