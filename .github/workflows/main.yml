@@ -49,7 +49,7 @@ jobs:
            sarif-file: scout-report.sarif
            
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7.0.1
         if: always()
         with:
            name: docker-scout-findings
