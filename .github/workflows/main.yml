@@ -25,11 +25,11 @@ jobs:
        with:
           name: bandit findings
           path: bandit-findings.json
-          
-   image_scan:
-      name: Build image and Scan
-      runs-on: ubuntu-latest
-      steps: 
+        
+  image_scan:
+     name: Build image and Scan
+     runs-on: ubuntu-latest
+     steps: 
       - name: Check out
         uses: actions/checkout@v2
         
