@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  sast_scan:
+     name: Rub Bandit Scan
+     runs-on: ubuntu-latest
+     steps:
+     - name: Check out
+       uses: actions/checkout@v2
+     - name: Setup Python
+       uses: actions/setup-python@v2
+       with:
+         python-version: v3.8
+     - name: Install bandit
+       run: pip install bandit
+     - name: run bandit
+       run: bandit -r .
