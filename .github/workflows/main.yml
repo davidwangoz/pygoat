@@ -53,7 +53,7 @@ jobs:
           sudo systemctl restart docker
       - name: Docker Scout
         run: |
-          echo ${{secrets.REPO-PWD}} | docker login -u ${{secrets.REPO_USER}} --password-stin
+          echo ${{secrets.REPO_PWD}} | docker login -u ${{secrets.REPO_USER}} --password-stin
           docker scout quickview
           docker scout cves
 
