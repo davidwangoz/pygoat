@@ -13,7 +13,7 @@ jobs:
      - name: Setup Python
        uses: actions/setup-python@v2
        with:
-         python-version: v3.8
+         python-version: v3.11
      - name: Install bandit
        run: pip install bandit
      - name: run bandit
@@ -36,7 +36,7 @@ jobs:
       - name: Setup Docker
         uses: docker-practice/actions-setup-docker@v1
         with:
-           docker_version: '20.10.7'
+           docker_version: '24.04'
            
       - name: Build Docker image
         run: docker build -f Dockerfile -t mypygoat:lastest .
